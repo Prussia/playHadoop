@@ -13,6 +13,10 @@ docker run -d --name=hadoopserver --net=host -p 8030:8030 -p 8031:8031 -p 8032:8
 
 - [Apache Hadoop Wiki](https://wiki.apache.org/hadoop/)
 
+### Architecture
+- [Hadoop Internals](http://ercoppa.github.io/HadoopInternals/)
+
+
 ### HDFS
 - [HDFS Architecture](https://www.edureka.co/blog/apache-hadoop-hdfs-architecture/)
 
