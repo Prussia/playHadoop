@@ -13,6 +13,11 @@ docker run -d --name=hadoopserver --net=host -p 8030:8030 -p 8031:8031 -p 8032:8
 
 - [Apache Hadoop Wiki](https://wiki.apache.org/hadoop/)
 
+### HDFS
+- [HDFS Architecture](https://www.edureka.co/blog/apache-hadoop-hdfs-architecture/)
+
+### MapReduce
+
 ## Roadmap - https://www.zhihu.com/question/19795366
 - [Hadoop家族学习路线图 开篇必读](https://link.zhihu.com/?target=http%3A//blog.fens.me/hadoop-family-roadmap/)
 - [Hive学习路线图](https://link.zhihu.com/?target=http%3A//blog.fens.me/hadoop-hive-roadmap/)
