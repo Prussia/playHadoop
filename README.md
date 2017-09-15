@@ -26,3 +26,6 @@ docker run -d --name=hadoopserver --net=host -p 8030:8030 -p 8031:8031 -p 8032:8
 - [Hadoop家族学习路线图 开篇必读](https://link.zhihu.com/?target=http%3A//blog.fens.me/hadoop-family-roadmap/)
 - [Hive学习路线图](https://link.zhihu.com/?target=http%3A//blog.fens.me/hadoop-hive-roadmap/)
 - [Mahout学习路线图](https://link.zhihu.com/?target=http%3A//blog.fens.me/hadoop-mahout-roadmap/)
+
+## Tool
+- [Toad for Apache Hadoop](https://www.toadworld.com/m/freeware/1609/)
