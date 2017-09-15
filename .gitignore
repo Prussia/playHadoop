@@ -4,7 +4,7 @@
 
 .project
 
-/.settings/ 
+*/.settings/ 
 .settings/org.eclipse.wst.common.project.facet.core.xml
 
 .settings/org.eclipse.jdt.core.prefs
@@ -12,3 +12,17 @@
 .settings/org.eclipse.core.resources.prefs
 
 *.class
+
+playMapReduce/.settings/org.eclipse.core.resources.prefs
+
+playMapReduce/.settings/org.eclipse.jdt.core.prefs
+
+playMapReduce/.settings/org.eclipse.m2e.core.prefs
+
+playSpringHadoop/.settings/org.eclipse.m2e.core.prefs
+
+playSpringHadoop/.settings/org.eclipse.jdt.core.prefs
+
+playSpringHadoop/.settings/org.eclipse.core.resources.prefs
+
+playSpringHadoop/.settings/org.eclipse.wst.common.project.facet.core.xml

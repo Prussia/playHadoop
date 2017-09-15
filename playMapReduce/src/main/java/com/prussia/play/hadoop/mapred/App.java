@@ -1,4 +1,4 @@
-package com.prussia.play.hadoop.mr;
+package com.prussia.play.hadoop.mapred;
 
 /**
  * Hello world!
