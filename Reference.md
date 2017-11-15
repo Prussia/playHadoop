@@ -5,7 +5,9 @@ https://segmentfault.com/a/1190000009130234
 
 ### 免密码启动Hadoop
 https://www.cnblogs.com/dagger14/p/6599194.html
+   
    Press enter for each line 提示输入直接按回车就好
+   
    id_rsa = {file_name}
 ```
 $ ssh-keygen -t rsa
