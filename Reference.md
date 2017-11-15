@@ -23,3 +23,27 @@ $ chmod og-wx ~/.ssh/authorized_keys
    UseKeychain yes
    IdentityFile ~/.ssh/id_rsa
   ```
+
+### hadoop无法访问50070端口
+
+http://blog.csdn.net/Neone__u/article/details/53741786
+hdfs-site.xml 添加如下
+```
+<property>
+  <name>dfs.http.address</name>
+  <value>0.0.0.0:50070</value>
+</property>
+```
+```
+sbin/stop-hdfs.sh
+sbin/stop-yarn.sh
+
+bin/hdfs namenode -format
+
+sbin/start-hdfs.sh
+sbin/start-yarn.sh
+
+```
+
+
+
