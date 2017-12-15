@@ -28,3 +28,4 @@ playSpringHadoop/.settings/org.eclipse.core.resources.prefs
 playSpringHadoop/.settings/org.eclipse.wst.common.project.facet.core.xml
 
 playMapReduce/bin/*
+playSpringHadoop/resources/new.snappy.parquet
