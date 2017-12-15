@@ -34,16 +34,19 @@ public class Parquet2JsonTests {
 			Path filePath = new Path(fileURL.getPath());
 			FileStatus[] fileStatus = localFileSystem.listStatus(filePath);
 			
-			
-			long count = getRowCount4Parquet(conf, fileStatus);
+			List<FileStatus> fileStatusList = getFileStatusList(fileStatus);
+
+			long count = getRowCount4Parquet(conf, fileStatusList);
 			log.warn("total count = {}", count);
 		}
 	}
 
-	private static long getRowCount4Parquet(Configuration conf, FileStatus[] fileStatus) throws IOException {
-		List<FileStatus> fileStatusList = Arrays.stream(fileStatus)
+	private static List<FileStatus> getFileStatusList(FileStatus[] fileStatus) {
+		return Arrays.stream(fileStatus)
 				.filter(f -> "parquet".equals(FilenameUtils.getExtension(f.getPath().getName()))).collect(toList());
+	}
 
+	private static long getRowCount4Parquet(Configuration conf, List<FileStatus> fileStatusList) throws IOException {
 		List<Footer> footers = ParquetFileReader.readAllFootersInParallel(conf, fileStatusList, false);
 //			footers.stream().forEach(
 //					e -> log.debug("ParquetMetadata = {}", ParquetMetadata.toPrettyJSON(e.getParquetMetadata())));
