@@ -2,6 +2,7 @@ package com.prussia.play.hadoop.test;
 
 import static java.util.stream.Collectors.toList;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -14,7 +15,6 @@ import org.apache.hadoop.fs.LocalFileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.parquet.hadoop.Footer;
 import org.apache.parquet.hadoop.ParquetFileReader;
-import org.apache.parquet.hadoop.metadata.ParquetMetadata;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,23 +32,25 @@ public class Parquet2JsonTests {
 		try (LocalFileSystem localFileSystem = FileSystem.getLocal(conf);) {
 
 			Path filePath = new Path(fileURL.getPath());
-
 			FileStatus[] fileStatus = localFileSystem.listStatus(filePath);
-			List<FileStatus> fileStatusList = Arrays.stream(fileStatus).filter(f -> "parquet".equals(FilenameUtils.getExtension(f.getPath().getName()))).collect(toList());
-
-			// ParquetMetadata metadata = ParquetFileReader.readFooter(new
-			// Configuration(), new Path(url.getPath()));
-
-			List<Footer> footers = ParquetFileReader.readAllFootersInParallel(conf, fileStatusList, false);
-			// footers.stream().forEach(e -> log.debug(
-			// "ParquetMetadata = {}",
-			// ParquetMetadata.toPrettyJSON(e.getParquetMetadata()))
-			// );
-			long count = footers.stream()
-					.mapToLong(e -> e.getParquetMetadata().getBlocks().stream().mapToLong(t -> t.getRowCount()).sum())
-					.sum();
+			
+			
+			long count = getRowCount4Parquet(conf, fileStatus);
 			log.warn("total count = {}", count);
 		}
+	}
+
+	private static long getRowCount4Parquet(Configuration conf, FileStatus[] fileStatus) throws IOException {
+		List<FileStatus> fileStatusList = Arrays.stream(fileStatus)
+				.filter(f -> "parquet".equals(FilenameUtils.getExtension(f.getPath().getName()))).collect(toList());
+
+		List<Footer> footers = ParquetFileReader.readAllFootersInParallel(conf, fileStatusList, false);
+//			footers.stream().forEach(
+//					e -> log.debug("ParquetMetadata = {}", ParquetMetadata.toPrettyJSON(e.getParquetMetadata())));
+		long count = footers.stream()
+				.mapToLong(e -> e.getParquetMetadata().getBlocks().stream().mapToLong(t -> t.getRowCount()).sum())
+				.sum();
+		return count;
 	}
 
 }
