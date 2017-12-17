@@ -1,5 +1,6 @@
 # Hive Installation Notes
 - http://www.cnblogs.com/ToDoToTry/p/5349753.html
+- https://dzone.com/articles/how-configure-mysql-metastore
 
 ## 创建mysql metastore
 
