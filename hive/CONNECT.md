@@ -3,7 +3,7 @@
 - [Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients)
 - hive
 - Command
-  - Create DB
+  - [Create DB](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-CreateDataBase)
   ```
   CREATE DATABASE IF NOT EXISTS phu_hive_db
   COMMENT 'prussia hive database'
@@ -12,7 +12,7 @@
   Show databases;
   use phu_hive_db;
   ```
-  - Create table
+  - [Create table](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-CreateTable)
   ```
   CREATE EXTERNAL TABLE tb_test (
   id INT,
