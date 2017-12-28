@@ -28,4 +28,18 @@
   
   ```
   - [Create/Drop/Alter Index](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-Create/Drop/AlterIndex)
-
+  ```
+  CREATE INDEX index_name
+  ON TABLE tb_test (id)
+  AS index_type
+  [WITH DEFERRED REBUILD]
+  [IDXPROPERTIES (property_name=property_value, ...)]
+  [IN TABLE index_table_name]
+  [
+     [ ROW FORMAT ...] STORED AS ...
+     | STORED BY ...
+  ]
+  [LOCATION hdfs_path]
+  [TBLPROPERTIES (...)]
+  [COMMENT "index comment"];
+  ```
