@@ -27,4 +27,5 @@
   LOCATION 'hdfs://localhost:9000/tmp/test/';
   
   ```
+  - [Create/Drop/Alter Index](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-Create/Drop/AlterIndex)
 
