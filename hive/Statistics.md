@@ -9,3 +9,5 @@
 
 ### [How Impala Works with Hive](https://www.cloudera.com/documentation/enterprise/5-12-x/topics/impala_hadoop.html#intro_hive)
 The Impala query optimizer can also make use of table statistics and column statistics. Originally, you gathered this information with the ANALYZE TABLE statement in Hive; in Impala 1.2.2 and higher, use the Impala COMPUTE STATS statement instead. COMPUTE STATS requires less setup, is more reliable and faster, and does not require switching back and forth between impala-shell and the Hive shell.
+
+## [Statistics in Hive](https://cwiki.apache.org/confluence/display/Hive/StatsDev)
